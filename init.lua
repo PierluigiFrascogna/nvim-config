@@ -12,7 +12,8 @@ vim.opt.undofile = true
 vim.opt.breakindent = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.timeout = false
+vim.opt.timeout = true
+vim.opt.timeoutlen = 10000
 vim.opt.updatetime = 250
 vim.opt.list = true
 vim.opt.listchars = {
@@ -49,6 +50,25 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc="Clear search highlists" } )
 
-vim.pack.add { { src = "https://github.com/catppuccin/nvim", name = "catppuccin" } }
+vim.api.nvim_create_autocmd('TextYankPost', {
+	desc = 'Highlight when yanking (copying) text',
+	group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+	callback = function() vim.hl.on_yank() end,
+})
+
+local function gh(repo) return "https://github.com/" .. repo end
+vim.pack.add { { src = gh("catppuccin/nvim"), name = "catppuccin" } }
+vim.pack.add { gh("nvim-tree/nvim-web-devicons") }
+vim.pack.add { gh 'lewis6991/gitsigns.nvim' }
+
+vim.pack.add { gh 'folke/which-key.nvim' } -- Useful plugin to show you pending keybinds.
+require('which-key').setup {
+	-- Delay between pressing a key and opening which-key (milliseconds)
+	delay = 2000,
+	icons = { mappings = vim.g.have_nerd_font },
+}
+
+vim.pack.add { gh 'folke/todo-comments.nvim' }
+require('todo-comments').setup { signs = false }
 
 vim.cmd.colorscheme "catppuccin-mocha" -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
