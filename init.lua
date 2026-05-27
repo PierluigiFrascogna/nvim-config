@@ -90,6 +90,7 @@ vim.pack.add { gh 'folke/todo-comments.nvim' }
 require('todo-comments').setup { signs = false }
 
 vim.pack.add({ { src = 'https://github.com/nvim-mini/mini.statusline', version = 'stable' } })
+require('mini.statusline').setup()
 
 -- vim.pack.add {
 --     gh 'nvim-lua/plenary.nvim',
