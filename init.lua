@@ -89,6 +89,8 @@ vim.cmd.colorscheme "catppuccin-mocha" -- catppuccin-latte, catppuccin-frappe, c
 vim.pack.add { gh 'folke/todo-comments.nvim' }
 require('todo-comments').setup { signs = false }
 
+vim.pack.add({ { src = 'https://github.com/nvim-mini/mini.statusline', version = 'stable' } })
+
 -- vim.pack.add {
 --     gh 'nvim-lua/plenary.nvim',
 --     gh 'nvim-telescope/telescope.nvim',
@@ -116,5 +118,5 @@ require('nvim-treesitter').install { 'lua' }
 
 vim.pack.add { gh "neovim/nvim-lspconfig" }
 vim.lsp.enable('lua_ls')
-vim.lsp.config.lua_ls.settings.Lua = { diagnostics = { globals = { 'vim' }}}
+vim.lsp.config.lua_ls.settings.Lua = { diagnostics = { globals = { 'vim' } } }
 
