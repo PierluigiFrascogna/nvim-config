@@ -17,7 +17,7 @@ vim.opt.timeoutlen = 10000
 vim.opt.updatetime = 250
 vim.opt.list = true
 vim.opt.listchars = {
-  eol = ' ',   -- if you want some option: ↲, ↵,
+  eol = ' ', -- if you want some option: ↲, ↵,
   multispace = '␣',
   lead = '·',
   leadmultispace = '··',
@@ -36,7 +36,6 @@ vim.opt.confirm = false
 vim.o.splitright = true
 vim.o.splitbelow = true
 
-vim.keymap.set("n", "<leader>l", ":Ex<Enter>", { desc = "open netrw" })
 vim.keymap.set("n", "<leader>x", ":w<Enter>:source %<Enter>", { desc = 'source file' })
 
 vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
@@ -140,4 +139,13 @@ vim.lsp.config.lua_ls.settings.Lua = { diagnostics = { globals = { 'vim' } } }
 
 vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format() end, { desc = 'format file' })
 
-vim.keymap.set('n', '<leader>qd', function() vim.diagnostic.setqflist() end, {desc='[Q]uicklist [D]iagnostics'})
+vim.keymap.set('n', '<leader>qd', function() vim.diagnostic.setqflist() end, { desc = '[Q]uicklist [D]iagnostics' })
+
+vim.pack.add { gh 'stevearc/oil.nvim' }
+require("oil").setup {
+  view_options = {
+    show_hidden = true,
+  }
+}
+vim.keymap.set("n", "<leader>lf", function() require('oil').open(nil, { preview = { vertical = true } }) end,
+  { desc = "[L]ist [F]iles" })
