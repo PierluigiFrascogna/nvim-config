@@ -120,6 +120,7 @@ local tbuiltins = require "telescope.builtin"
 vim.keymap.set("n", "<leader>sf", tbuiltins.find_files, { desc = "[S]earch [F]iles" })
 vim.keymap.set("n", "<leader>sn", function() tbuiltins.fd({ cwd = vim.fn.stdpath('config') }) end,
   { desc = "[S]earch [N]eovim config" })
+vim.keymap.set("n", "<leader>sh", tbuiltins.help_tags, { desc = "[S]earch [H]elp tags" })
 
 -- Override default behavior and theme when searching
 vim.keymap.set('n', '<leader>/', function()
