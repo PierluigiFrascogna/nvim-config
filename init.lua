@@ -155,5 +155,6 @@ vim.keymap.set('n', '<leader>ot', vimcmd ':terminal', { desc = '[O]pen [T]ermina
 vim.pack.add({ { src = gh 'saghen/blink.cmp', version = vim.version.range('1.*'), }, })
 require('blink.cmp').setup()
 
-vim.keymap.set('i', '<S-Backspace>', '<C-c>cb<del>',{desc='long backspace'})
-vim.keymap.set('i', '<S-Enter>', '<C-X><C-O>', {desc='accept autocompletion'})
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('i', '<S-Backspace>', '<C-c>cb<del>', { desc = 'long backspace' })
+vim.keymap.set('i', '<S-Enter>', '<C-X><C-O>', { desc = 'accept autocompletion' })
