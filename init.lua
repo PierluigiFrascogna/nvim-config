@@ -122,13 +122,13 @@ vim.keymap.set("n", "<leader>sn", function() tbuiltins.fd({ cwd = vim.fn.stdpath
 vim.keymap.set("n", "<leader>sh", tbuiltins.help_tags, { desc = "[S]earch [H]elp tags" })
 
 -- Override default behavior and theme when searching
-vim.keymap.set('n', '<leader>/', function()
+vim.keymap.set('n', '<leader>sc', function()
   -- You can pass additional configuration to Telescope to change the theme, layout, etc.
   tbuiltins.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
     winblend = 10,
     previewer = false,
   })
-end, { desc = 'search [/] in current buffer' })
+end, { desc = '[S]earch in [C]urrent buffer' })
 
 vim.pack.add { gh "nvim-treesitter/nvim-treesitter" }
 require('nvim-treesitter').install { 'lua' }
@@ -154,6 +154,6 @@ vim.keymap.set('n', '<leader>ot', vimcmd ':terminal', { desc = '[O]pen [T]ermina
 
 vim.pack.add({ { src = gh 'saghen/blink.cmp', version = vim.version.range('1.*'), }, })
 require('blink.cmp').setup()
---
+
 vim.keymap.set('i', '<S-Backspace>', '<C-c>cb<del>',{desc='long backspace'})
 vim.keymap.set('i', '<S-Enter>', '<C-X><C-O>', {desc='accept autocompletion'})
