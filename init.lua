@@ -135,7 +135,6 @@ require('nvim-treesitter').install { 'lua' }
 
 vim.pack.add { gh "neovim/nvim-lspconfig" }
 vim.lsp.enable('lua_ls')
-vim.lsp.config.lua_ls.settings.Lua = { diagnostics = { globals = { 'vim' } } }
 
 vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format() end, { desc = '[F]ormat file' })
 
@@ -153,5 +152,5 @@ vim.keymap.set("n", "<leader>lf", function() require('oil').open(nil, { preview 
 local function vimcmd(command) return function() vim.cmd(command) end end
 vim.keymap.set('n', '<leader>ot', vimcmd ':terminal', { desc = '[O]pen [T]erminal' })
 
--- vim.pack.add({ { src = gh 'saghen/blink.cmp', version = vim.version.range('1.*'), }, })
--- require('blink.cmp').setup()
+vim.pack.add({ { src = gh 'saghen/blink.cmp', version = vim.version.range('1.*'), }, })
+require('blink.cmp').setup()
