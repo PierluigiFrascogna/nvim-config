@@ -12,7 +12,7 @@ require 'autocmds'
 require 'plugins'
 
 
-local gh = require('plugins.lib.sources').gh
+local gh = require('lua.plugins.lib.remotes').gh
 
 vim.pack.add { gh 'folke/which-key.nvim' } -- Useful plugin to show you pending keybinds.
 require('which-key').setup {

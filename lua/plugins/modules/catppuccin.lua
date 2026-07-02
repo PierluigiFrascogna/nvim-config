@@ -1,4 +1,4 @@
-local gh = require('plugins.lib.sources').gh
+local gh = require('lua.plugins.lib.remotes').gh
 vim.pack.add { { src = gh("catppuccin/nvim"), name = "catppuccin" } }
 vim.pack.add { gh("nvim-tree/nvim-web-devicons") }
 
