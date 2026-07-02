@@ -12,14 +12,7 @@ require 'autocmds'
 require 'plugins'
 
 
-local gh = require('lua.plugins.lib.remotes').gh
-
-vim.pack.add { gh 'folke/which-key.nvim' } -- Useful plugin to show you pending keybinds.
-require('which-key').setup {
-  -- Delay between pressing a key and opening which-key (milliseconds)
-  delay = 2000,
-  icons = { mappings = vim.g.have_nerd_font },
-}
+local gh = require('plugins.lib.remotes').gh
 
 vim.pack.add { gh 'folke/todo-comments.nvim' }
 require('todo-comments').setup { signs = false }
