@@ -1,0 +1,7 @@
+{
+  "Source remote": {
+    "prefix": "src",
+    "body": "local ${1:gh} = require('plugins.lib.remotes').$1",
+    "description": "Require remote source from plugins.lib.remotes"
+  }
+}
