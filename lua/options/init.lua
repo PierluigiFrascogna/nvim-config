@@ -28,5 +28,5 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = false
 vim.opt.scrolloff = 10
 vim.opt.confirm = false
-vim.o.splitright = true
-vim.o.splitbelow = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
